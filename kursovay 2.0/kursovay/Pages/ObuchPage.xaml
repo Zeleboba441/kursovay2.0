@@ -1,0 +1,31 @@
+﻿<Page x:Class="kursovay.Pages.ObuchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ObuchPage">
+
+    <StackPanel DataContext ="{Binding EditObuchenie}"  Background="#FFAE8235" RenderTransformOrigin="0.496,0.49">
+        <Label Content="Врач"/>
+        <ComboBox ItemsSource="{Binding Vrachs}"
+                  SelectedItem="{Binding SelectVrachs}"
+                  DisplayMemberPath="LastName"/>
+        <Label Content="Персонал"/>
+        <ComboBox ItemsSource="{Binding Reagent}"
+                  SelectedItem="{Binding SelectReagents}"
+                  DisplayMemberPath=""/>
+        <StackPanel Visibility="{Binding CreateViewObuchenieVis}"  HorizontalAlignment="Center" 
+                    Margin="0,14,141,0" Grid.Column="3" VerticalAlignment="Top" Height="38" Width="177" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Квалификация персонала" 
+                       HorizontalAlignment="Center" Height="18" FontFamily="Impact" FontSize="14"/>
+            <Button x:Name="button5" Content="Создать" Width="75" Command="{Binding ViewObuch}"/>
+        </StackPanel>
+ 
+        <Button Content="Сохранить и закрыть" Command="{Binding SavePostavki}" Height="49"/>
+        <Button x:Name="button" Content="Меню" Height="69" Command="{Binding MainMenu}"/>
+        <Button x:Name="button1" Content="Список персонала" Height="78"/>
+    </StackPanel>
+</Page>

@@ -1,0 +1,27 @@
+﻿<Page x:Class="kursovay.Pages.PersonalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PersonalPage">
+    
+    
+
+    <StackPanel Background="#FFB8FFF2" RenderTransformOrigin="0.496,0.49">
+        <Label Content="Имя"/>
+        <TextBox Text="{Binding EditPersonal.Name}"/>
+        <Label Content="Фамилия"/>
+        <TextBox Text="{Binding EditPersonal.LastName}"/>
+        <Label Content="Пол"/>
+        <TextBox Text="{Binding EditPersonal.gender}"/>
+
+
+
+        <Button Content="Сохранить и закрыть" Command="{Binding SavePersonal}" Height="49"/>
+        <Button x:Name="button" Content="Меню" Height="69" Command="{Binding MainMenu}"/>
+    </StackPanel>
+</Page>
+

@@ -1,0 +1,28 @@
+﻿<Page x:Class="kursovay.Pages.ViewPostavshikPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewPostavshikPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Поставщик:"/>
+            <ComboBox ItemsSource="{Binding Postavshik}" SelectedItem="{Binding SelectedPostavshik}" DisplayMemberPath="Title" Width="200"/>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding PostovshiksBySelectedPostavhik}" SelectedItem="{Binding SelectedPostovshik}">   
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название реагентов" DisplayMemberBinding="{Binding Name}"/>         
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

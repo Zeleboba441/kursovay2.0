@@ -1,0 +1,30 @@
+﻿<Page x:Class="kursovay.Pages.ViewPostavkiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewPostavkiPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Врач выполневший поставку:" Background="#FFFFFBFB"/>
+            <ComboBox ItemsSource="{Binding Vrachs}" SelectedItem="{Binding SelectVrachView}" DisplayMemberPath="Title" Width="200"/>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding SelectReagentsByPostavshiks}" SelectedItem="{Binding SelectedVrachs}" Margin="3,0,-3,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Врач" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Поставщик" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Реагент" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View> sososo
+        </ListView>
+    </Grid>
+</Page>
